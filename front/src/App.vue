@@ -67,7 +67,7 @@ watch(schoolAttendanceByYear, (newSchoolAttendance) => {
 
   schoolAttendancyByYearChart.setOption({
     title: {
-      text: `School attendancy evolution in ${country.value} from ${
+      text: `School attendance ratio evolution in ${country.value} from ${
         maleByCountry[0].year
       } to ${maleByCountry[maleByCountry.length - 1].year}`,
     },
@@ -82,7 +82,11 @@ watch(schoolAttendanceByYear, (newSchoolAttendance) => {
       type: 'time',
     },
     yAxis: {
-      name: 'school attendancy',
+      name: '% school attendance ratio',
+      nameLocation: 'start',
+      nameTextStyle: {
+        align: 'right',
+      },
     },
     series: [
       {
@@ -124,20 +128,25 @@ watch(schoolAttendance, (newSchoolAttendance) => {
     title: {
       text:
         year.value !== '0'
-          ? `School attendancy in ${year.value}`
-          : 'School attendancy',
+          ? `School attendance ratio in ${year.value}`
+          : 'School attendance ratio',
     },
     color: ['#91cc75', '#ee6666'],
     tooltip: {},
     xAxis: {
       axisLabel: {
         interval: 0,
+        rotate: 45,
       },
       data: maleByCountry.map((row: any) => row.country),
       type: 'category',
     },
     yAxis: {
-      name: 'school attendancy',
+      name: '% school attendance ratio',
+      nameLocation: 'start',
+      nameTextStyle: {
+        align: 'right',
+      },
     },
     series: [
       {
@@ -195,12 +204,17 @@ onMounted(async () => {
     xAxis: {
       axisLabel: {
         interval: 0,
+        rotate: 45,
       },
       data: maleByCountry.map((row: any) => row.country),
       type: 'category',
     },
     yAxis: {
-      name: 'school attendancy',
+      name: '% school attendance ratio',
+      nameLocation: 'start',
+      nameTextStyle: {
+        align: 'right',
+      },
     },
     series: [
       {
