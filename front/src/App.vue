@@ -81,7 +81,9 @@ watch(schoolAttendanceByYear, (newSchoolAttendance) => {
     xAxis: {
       type: 'time',
     },
-    yAxis: {},
+    yAxis: {
+      name: 'school attendancy',
+    },
     series: [
       {
         name: 'Male',
@@ -134,7 +136,9 @@ watch(schoolAttendance, (newSchoolAttendance) => {
       data: maleByCountry.map((row: any) => row.country),
       type: 'category',
     },
-    yAxis: {},
+    yAxis: {
+      name: 'school attendancy',
+    },
     series: [
       {
         name: 'Male',
@@ -195,7 +199,9 @@ onMounted(async () => {
       data: maleByCountry.map((row: any) => row.country),
       type: 'category',
     },
-    yAxis: {},
+    yAxis: {
+      name: 'school attendancy',
+    },
     series: [
       {
         name: 'Male',
