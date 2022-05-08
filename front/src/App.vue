@@ -37,6 +37,7 @@ const country = ref(null as string | null);
 const schoolAttendance = ref([]);
 const schoolAttendanceByYear = ref([]);
 const chartToDisplay = ref(Charts.SCHOOL_ATTENDANCY_BY_COUNTRY as Charts);
+const started = ref(false);
 
 const reloadDataset = async () => {
   const res = await axios.get('http://127.0.0.1:8000/by-gender', {
@@ -65,6 +66,11 @@ watch(schoolAttendanceByYear, (newSchoolAttendance) => {
   );
 
   schoolAttendancyByYearChart.setOption({
+    legend: {
+      orient: 'vertical',
+      left: 10,
+      top: 'center',
+    },
     color: ['#91cc75', '#ee6666'],
     tooltip: {},
     xAxis: {
@@ -105,6 +111,11 @@ watch(schoolAttendance, (newSchoolAttendance) => {
   );
 
   chart.setOption({
+    legend: {
+      orient: 'vertical',
+      left: 10,
+      top: 'center',
+    },
     color: ['#91cc75', '#ee6666'],
     tooltip: {},
     xAxis: {
@@ -155,6 +166,11 @@ onMounted(async () => {
 
   chart = echarts.init(document.getElementById('chartElement') as HTMLElement);
   chart.setOption({
+    legend: {
+      orient: 'vertical',
+      left: 10,
+      top: 'center',
+    },
     color: ['#91cc75', '#ee6666'],
     tooltip: {},
     xAxis: {
@@ -182,6 +198,24 @@ onMounted(async () => {
 </script>
 
 <template>
+  <div class="h-screen" :class="started ? 'hidden' : ''">
+    <h1 class="mt-4 text-center text-2xl">
+      School attendance in south american coutries
+    </h1>
+    <h3 class="w-3/4 mt-8 mx-auto text-lg">
+      For this edition of Hacking Ed Planning, we chose to work on challenge 6.
+      This callenge consist of displaying data about education in south american
+      coutries.<br />
+      We decided to focus on experience. So we chose quality over quantity and
+      worked on one metric and one metric only: school attendancy.<br />
+      We try to display it in clear yet joyful ways.
+    </h3>
+    <div class="flex justify-center">
+      <button @click="started = true" class="mt-4 mx-auto py-2 px-4 border">
+        Click here to start
+      </button>
+    </div>
+  </div>
   <div class="flex">
     <div class="h-screen w-1/4 py-2 px-4 flex flex-col space-y-2 shadow">
       <div class="flex flex-col space-y-2">
