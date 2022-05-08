@@ -203,12 +203,12 @@ onMounted(async () => {
       School attendance in south american coutries
     </h1>
     <h3 class="w-3/4 mt-8 mx-auto text-lg">
-      For this edition of Hacking Ed Planning, we chose to work on challenge 6.
-      This callenge consist of displaying data about education in south american
-      coutries.<br />
+      For this edition of the Hacking Ed Planning, we chose to work on challenge
+      6. This challenge consists of displaying data about education in Latin
+      American countries.<br />
       We decided to focus on experience. So we chose quality over quantity and
-      worked on one metric and one metric only: school attendancy.<br />
-      We try to display it in clear yet joyful ways.
+      worked on one metric and one metric only: school attendance.<br />
+      We have tried to display it in clear, yet jovial ways.
     </h3>
     <div class="flex justify-center">
       <button @click="started = true" class="mt-4 mx-auto py-2 px-4 border">
