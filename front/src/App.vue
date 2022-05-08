@@ -250,6 +250,14 @@ onMounted(async () => {
         Click here to start
       </button>
     </div>
+    <div class="mt-8 flex items-center justify-around">
+      <div class="w-1/4">
+        <img class="w-full" src="/IIEP_Blue_RGB-Short.png" />
+      </div>
+      <div class="w-1/3 mr-10">
+        <img class="w-full" src="Logo_Latitudes.png" />
+      </div>
+    </div>
   </div>
   <div class="flex">
     <div class="h-screen w-1/4 py-2 px-4 flex flex-col space-y-2 shadow">
