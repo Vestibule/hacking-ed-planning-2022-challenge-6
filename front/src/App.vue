@@ -200,7 +200,7 @@ onMounted(async () => {
 <template>
   <div class="h-screen" :class="started ? 'hidden' : ''">
     <h1 class="mt-4 text-center text-2xl">
-      School attendance in south american coutries
+      School attendance in Latin America
     </h1>
     <h3 class="w-3/4 mt-8 mx-auto text-lg">
       For this edition of the Hacking Ed Planning, we chose to work on challenge
