@@ -66,6 +66,11 @@ watch(schoolAttendanceByYear, (newSchoolAttendance) => {
   );
 
   schoolAttendancyByYearChart.setOption({
+    title: {
+      text: `School attendancy evolution in ${country.value} from ${
+        maleByCountry[0].year
+      } to ${maleByCountry[maleByCountry.length - 1].year}`,
+    },
     legend: {
       orient: 'vertical',
       left: 10,
@@ -74,8 +79,6 @@ watch(schoolAttendanceByYear, (newSchoolAttendance) => {
     color: ['#91cc75', '#ee6666'],
     tooltip: {},
     xAxis: {
-      // data: maleByCountry.map((row: any) => Date.parse(row.year)),
-      // interval: 1000 * 60 * 60 * 24 * 365,
       type: 'time',
     },
     yAxis: {},
@@ -115,6 +118,12 @@ watch(schoolAttendance, (newSchoolAttendance) => {
       orient: 'vertical',
       left: 10,
       top: 'center',
+    },
+    title: {
+      text:
+        year.value !== '0'
+          ? `School attendancy in ${year.value}`
+          : 'School attendancy',
     },
     color: ['#91cc75', '#ee6666'],
     tooltip: {},
@@ -166,6 +175,12 @@ onMounted(async () => {
 
   chart = echarts.init(document.getElementById('chartElement') as HTMLElement);
   chart.setOption({
+    title: {
+      text:
+        year.value !== '0'
+          ? `School attendancy in ${year.value}`
+          : 'School attendancy',
+    },
     legend: {
       orient: 'vertical',
       left: 10,
